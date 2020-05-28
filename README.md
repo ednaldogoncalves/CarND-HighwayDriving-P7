@@ -272,10 +272,10 @@ In order to avoid abrupt changes of the velocity, we incrementally increase or d
 The last two points of the previous trajectory (or the car position if there are no previous trajectory, [lines 263 to 307](./src/main.cpp#L263)) are used in conjunction three points at a far distance ([lines 313 to 315](./src/main.cpp#L313)) to initialize the spline calculation ([line 340 and 343](./src/main.cpp#L340)).
 
 ```shell
- // Create the spline.
- tk::spline s;
+// Create the spline.
+tk::spline s;
 // Set (x,y) points to the spline
- s.set_points(ptsx, ptsy);
+s.set_points(ptsx, ptsy);
 ```
 
 In Frenet add evenly 30m spaced points ahead of the starting reference. Instead of just looking at one distance increment, we looking out basically 35, 60, 90, instead of looping through and creating 50.
@@ -290,7 +290,7 @@ To make the work less complicated to the spline calculation based on those point
 ```shell
 for ( int i = 0; i < ptsx.size(); i++ ) 
 {
-// shift car reference angle to 0 degree
+	// shift car reference angle to 0 degree
 	double shift_x = ptsx[i] - ref_x;
 	double shift_y = ptsy[i] - ref_y;
 
@@ -317,7 +317,7 @@ The rest of the points are calculated by evaluating the spline and transforming 
 <p align="center">
 Full video of the route executed in the project<br>
 <img src="./src/Images/full_route.png"><br>
-<a href="./src/Videos/full_route.mp4">Download video</a>
+<a target="_blank" href="./src/Videos/full_route/full_route_player.html">Download video</a>
 </p>
 
 
