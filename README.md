@@ -124,8 +124,9 @@ Listening to port 4567
 ```
 
 Now the path planner is running and listening on port 4567 for messages from the simulator. Next step is to open Udacity's simulator:
+
 <p align="center">
-![Simulator](./src/Images/simulator.png)
+<img src="./src/Images/simulator.png">
 </p>
 
 ## Project [Rubric](https://review.udacity.com/#!/rubrics/1971/view)
@@ -145,7 +146,7 @@ No changes were made in the cmake configuration. A new file was added [src/splin
 I ran the simulator for around 5 miles without incidents:
 
 <p align="center">
-![Total Driving](./src/Images/totaldriving.png)
+<img src="./src/Images/totaldriving.png">
 </p>
 
 #### - The car drives according to the speed limit.
@@ -161,8 +162,8 @@ No collisions.
 The car stays in its lane most of the time but when it changes lane because of traffic or to return to the center lane.
 
 <p align="center">
-The vehicle prefers to stay in the center lane, if it is in another lane, then if possible it goes back to the center.
-![Back center](./src/Images/back_center.gif)<br>
+The vehicle prefers to stay in the center lane, if it is in another lane, then if possible it goes back to the center.<br>
+<img src="./src/Images/back_center.gif"><br>
 [Download video](./src/Videos/back_center.mp4)
 </p>
 
@@ -170,23 +171,23 @@ The vehicle prefers to stay in the center lane, if it is in another lane, then i
 The car change lanes when the there is a slow car in front of it, and it is safe to change lanes (no other cars around) or when it is safe to return the center lane.
 
 <p align="center">
-Overtaking another vehicle on the right lane
-![Right overtake](./src/Images/right_overtake.gif)<br>
+Overtaking another vehicle on the right lane<br>
+<img src="./src/Images/right_overtake.gif"><br>
 [Download video](./src/Videos/right_overtake.mp4)
 <p>
 <p align="center">
-Overtaking another vehicle on the left lane
-![Left overtake](./src/Images/left_overtake.gif)<br>
+Overtaking another vehicle on the left lane<br>
+<img src="./src/Images/left_overtake.gif"><br>
 [Download video](./src/Videos/left_overtake.mp4)
 <p>
 <p align="center">
-Overtaking another vehicle on the center lane
-![Center overtake](./src/Images/center_overtake.gif)<br>
+Overtaking another vehicle on the center lane<br>
+<img src="./src/Images/center_overtake.gif"><br>
 [Download video](./src/Videos/center_overtake.mp4)
 <p>
 <p align="center">
-Overtaking changing two tracks at once
-![Two overtake](./src/Images/two_overtake.gif)<br>
+Overtaking changing two tracks at once<br>
+<img src="./src/Images/two_overtake.gif"><br>
 [Download video](./src/Videos/two_overtake.mp4)
 </p>
 
@@ -202,9 +203,8 @@ The Path Planning module is typically decomposed into the following set of sub-m
 - **Behavior**: will define a set of candidate high level targets for the vehicle to follow (lane changes, slow down …)
 - **Trajectory**: for every possible high level targets, a precise path to follow will be computed. For each trajectory a cost will be derived (depending on feasibility, safety, legality, comfort and efficiency) and the trajectory with the lowest cost will be chosen.
 
-<p>
 <p align="center">
-![Overview planning](./src/Images/overview_planning.png)
+<img src="./src/Images/overview_planning.png">
 </p>
 
 #### Coordinate transforms
@@ -212,9 +212,8 @@ The Path Planning module is typically decomposed into the following set of sub-m
 Before going into the file details **main.cpp**, we discuss process models, we should mention **"Frenet Coordinates"**, which are a way of representing position on a road in a more intuitive way than traditional (x,y) Cartesian Coordinates.
 With Frenet coordinates, we use the variables **s** and **d** to describe a vehicle's position on the road. The **s** coordinate represents distance *along* the road (also known as **longitudinal displacement**) and the *d* coordinate represents side-to-side position on the road (also known as **lateral displacement**).
 
-<p>
 <p align="center">
-![Frenet](./src/Images/frenet.png)
+<img src="./src/Images/frenet.png">
 </p>
 
 In the code, the provided Eigen-3.3 library, they are represented by the functions: **getFrenet** responsável por transform from Cartesian **x**,**y** coordinates to Frenet **s**,**d** coordinates, and the function **getXY** responsible to inverter from Frenet to Cartesian, but It's not a linear transformation. That something that's calculated at the very beginning that we can just feed it. And, that's used for the map inside the function itself.
@@ -248,17 +247,15 @@ Here the limit of the maximum allowed speed and acceleration during the overtaki
 
 Based on the prediction of the situation we are in, this code increases the speed, decrease speed, or make a lane change when it is safe. Instead of increasing the speed at this part of the code, a `speed_diff` is created to be used for speed changes when generating the trajectory in the last part of the code. This approach makes the car more responsive acting faster to changing situations like a car in front of it trying to apply breaks to cause a collision.
 
-<p>
 <p align="center">
-Here it is checked if there is a vehicle nearby to be able to change lanes. If there is a vehicle nearby, then it only slows down by staying in the same lane until a safe situation arises to be able to change lanes and overtake the vehicle ahead.
-![Check overtake](./src/Images/check_before_overtake.gif)<br>
+Here it is checked if there is a vehicle nearby to be able to change lanes. If there is a vehicle nearby, then it only slows down by staying in the same lane until a safe situation arises to be able to change lanes and overtake the vehicle ahead.<br>
+<img src="./src/Images/check_before_overtake.gif"><br>
 [Download video](./src/Videos/check_before_overtake.mp4)
 </p>
 
-<p>
 <p align="center">
-In this other moment, the vehicle identified that it could change lanes, but when it did, another vehicle appeared in the lane that was going and then returned to the lane where it was previously.
-![Try overtake](./src/Images/try_overtake.gif)<br>
+In this other moment, the vehicle identified that it could change lanes, but when it did, another vehicle appeared in the lane that was going and then returned to the lane where it was previously.<br>
+<img src="./src/Images/try_overtake.gif"><br>
 [Download video](./src/Videos/try_overtake.mp4)
 </p>
 
@@ -317,10 +314,9 @@ for ( int i = 0; i < prev_size; i++ )
 
 The rest of the points are calculated by evaluating the spline and transforming the output coordinates to not local coordinates ([lines 359 to 403](./src/main.cpp#L359)). The speed change is decided on the behavior part of the code, but it is used in that part to increase/decrease speed on every trajectory points instead of doing it for the complete trajectory.
 
-<p>
 <p align="center">
-Full video of the route executed in the project
-![Full route](./src/Images/full_route.png)<br>
+Full video of the route executed in the project<br>
+<img src="./src/Images/full_route.png"><br>
 [Download video](./src/Videos/full_route.mp4)
 </p>
 
