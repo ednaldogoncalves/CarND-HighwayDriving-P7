@@ -317,7 +317,7 @@ The rest of the points are calculated by evaluating the spline and transforming 
 <p align="center">
 Full video of the route executed in the project<br>
 <img src="./src/Images/full_route.png"><br>
-<a target="_blank" href="./src/Videos/full_route/full_route_player.html">Download video</a>
+<a href="./src/Videos/full_route.mp4">Download video</a>
 </p>
 
 
