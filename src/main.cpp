@@ -308,7 +308,7 @@ int main() {
 
             // Setting up target points in the future.
 			// In Frenet add evenly 30m spaced points ahead of the starting reference
-			// Instead of just looking at one distance increment, we looking out basically 35, 60, 90, 120
+			// Instead of just looking at one distance increment, we looking out basically 35, 60, 90
 			// And instead of looping through and creating 50
             vector<double> next_wp0 = getXY(car_s + 30, 2 + 4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
             vector<double> next_wp1 = getXY(car_s + 60, 2 + 4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
@@ -355,7 +355,7 @@ int main() {
             }
 
             // Calculate distance y position on 30 m ahead.
-			// Calculate ow to break up spline points so that we travel at our desired reference velocity
+			// Calculate to break up spline points so that we travel at our desired reference velocity
             double target_x = 30.0;
             double target_y = s(target_x);
             double target_dist = sqrt(target_x*target_x + target_y*target_y);
@@ -368,7 +368,7 @@ int main() {
 			{
 				// Adding on those points that are along the spline
 				
-				/// To control Maximum Speed and Acceleration
+				// To control Maximum Speed and Acceleration
 				ref_vel += speed_diff;
 				if ( ref_vel > MAX_Limit_Speed ) 
 				{

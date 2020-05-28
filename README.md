@@ -1,21 +1,30 @@
-# CarND-Path-Planning-Project
-Self-Driving Car Engineer Nanodegree Program
-   
-### Simulator.
-You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2).  
+# CarND-HighwayDriving-P7
+Udacity Self-Driving Car Engineer Nanodegree Program
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-To run the simulator on Mac/Linux, first make the binary file executable with the following command:
+![Driving](./src/Images/driving.png)
+
+# Overview
+
+The goal this project is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The path planner gets the localization of the car and sensor fusion data from a simulator. A map is available that lists the waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3. The simulator sends car telemetry information (car's position and velocity) and sensor fusion information about the rest of the cars in the highway (Ex. car id, velocity, position). It expects a set of points spaced in time at 0.02 seconds representing the car's trajectory. The communication between the simulator and the path planner is done using [WebSocket](https://en.wikipedia.org/wiki/WebSocket). The path planner uses the [uWebSockets](https://github.com/uNetworking/uWebSockets) WebSocket implementation to handle this communication.
+
+My code for this project is publicly available and can be found here:
+https://github.com/ednaldogoncalves/CarND-HighwayDriving-P7
+
+## Steps
+
+- You can use the project version on repository [here](https://github.com/udacity/CarND-Path-Planning-Project).
+
+- If you decide to work in your local setup, you can download the latest simulator [here](https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2). To run the simulator on Mac/Linux, first make the binary file executable with the following command:
 ```shell
 sudo chmod u+x {simulator_file_name}
 ```
+- The code should stand on its own as redable material. Explain in code comments, as well as in your write-up, how your code works and why you wrote it that way.
 
-### Goals
-In this project your goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. You will be provided the car's localization and sensor fusion data, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
+- Make it easy for a reviewer to understand your code.
 
-#### The map of the highway is in data/highway_map.txt
-Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop.
-
-The highway's waypoints loop around so the frenet s value, distance along the road, goes from 0 to 6945.554.
+- The map of the highway is in data/highway_map.txt
+Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop. The highway's waypoints loop around so the frenet s value, distance along the road, goes from 0 to 6945.554.
 
 ## Basic Build Instructions
 
@@ -29,15 +38,10 @@ Here is the data provided from the Simulator to the C++ Program
 #### Main car's localization Data (No Noise)
 
 ["x"] The car's x position in map coordinates
-
 ["y"] The car's y position in map coordinates
-
 ["s"] The car's s position in frenet coordinates
-
 ["d"] The car's d position in frenet coordinates
-
 ["yaw"] The car's yaw angle in the map
-
 ["speed"] The car's speed in MPH
 
 #### Previous path data given to the Planner
@@ -46,13 +50,11 @@ Here is the data provided from the Simulator to the C++ Program
 the path has processed since last time. 
 
 ["previous_path_x"] The previous list of x points previously given to the simulator
-
 ["previous_path_y"] The previous list of y points previously given to the simulator
 
 #### Previous path's end s and d values 
 
 ["end_path_s"] The previous list's last point's frenet s value
-
 ["end_path_d"] The previous list's last point's frenet d value
 
 #### Sensor Fusion Data, a list of all other car's attributes on the same side of the road. (No Noise)
@@ -91,55 +93,217 @@ A really helpful resource for doing this project and creating smooth trajectorie
     cd uWebSockets
     git checkout e94b6e1
     ```
+---
 
-## Editor Settings
+## Files
 
-We've purposefully kept editor configuration files out of this repo in order to
-keep it as simple and environment agnostic as possible. However, we recommend
-using the following settings:
+My project consists of the following files:
 
-* indent using spaces
-* set tab width to 2 spaces (keeps the matrices in source code aligned)
+- **README.md** (writeup report) documentation of the results.
+- **main.cpp** The main c++ file that implements the communication with the simulator. The actual implementation of the path planner and the generation of the trajestories.
+- **utility.cpp** Util functions.
+- **videos** - videos recording of your vehicle driving autonomously overtaking other vehicle.
 
-## Code Style
+## Description
 
-Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+#### Compiling and executing the project
 
-## Project Instructions and Rubric
+To build the project using the `make` command after creating the **build** folder, as per previous instructions above. This is an example of the output of this script:
 
-Note: regardless of the changes you make, your project must be buildable using
-cmake and make!
+```shell
+root@870f75ddcc95:/home/workspace/carnd-path-planning-project/build# make
+[100%] built target path_planning
+```
+
+The project could be executed directly using `./path_planning`
+
+```shell
+root@870f75ddcc95:/home/workspace/CarND-Path-Planning-Project/build# ./path_planning
+Listening to port 4567
+```
+
+Now the path planner is running and listening on port 4567 for messages from the simulator. Next step is to open Udacity's simulator:
+
+![Simulator](./src/Images/simulator.png)
 
 
-## Call for IDE Profiles Pull Requests
+## Project [Rubric](https://review.udacity.com/#!/rubrics/1971/view)
 
-Help your fellow students!
+### Compilation
+---
 
-We decided to create Makefiles with cmake to keep this project as platform
-agnostic as possible. Similarly, we omitted IDE profiles in order to ensure
-that students don't feel pressured to use one IDE or another.
+#### - The code compiles correctly.
 
-However! I'd love to help people get up and running with their IDEs of choice.
-If you've created a profile for an IDE that you think other students would
-appreciate, we'd love to have you add the requisite profile files and
-instructions to ide_profiles/. For example if you wanted to add a VS Code
-profile, you'd add:
+No changes were made in the cmake configuration. A new file was added [src/spline.h](./scr/spline.h). It is the [Cubic Spline interpolation implementation](http://kluge.in-chemnitz.de/opensource/spline/): a single .h file you can use splines instead of polynomials. It was a great suggestion from the classroom QA video. It works great.
 
-* /ide_profiles/vscode/.vscode
-* /ide_profiles/vscode/README.md
+---
+### Valid trajectories
+---
 
-The README should explain what the profile does, how to take advantage of it,
-and how to install it.
+#### - The car is able to drive at least 4.32 miles without incident.
+I ran the simulator for around 5 miles without incidents:
 
-Frankly, I've never been involved in a project with multiple IDE profiles
-before. I believe the best way to handle this would be to keep them out of the
-repo root to avoid clutter. My expectation is that most profiles will include
-instructions to copy files to a new location to get picked up by the IDE, but
-that's just a guess.
+![Total Driving](./src/Images/totaldriving.png)
 
-One last note here: regardless of the IDE used, every submitted project must
-still be compilable with cmake and make./
+#### - The car drives according to the speed limit.
+No speed limit red message was seen.
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+#### - Max Acceleration and Jerk are not Exceeded.
+Max jerk red message was not seen.
+
+#### - Car does not have collisions.
+No collisions.
+
+#### - The car stays in its lane, except for the time between changing lanes.
+The car stays in its lane most of the time but when it changes lane because of traffic or to return to the center lane.
+
+The vehicle prefers to stay in the center lane, if it is in another lane, then if possible it goes back to the center.
+![Back center](./src/Images/back_center.gif)
+[Download video](./src/Videos/back_center.mp4)
+
+#### - The car is able to change lanes
+The car change lanes when the there is a slow car in front of it, and it is safe to change lanes (no other cars around) or when it is safe to return the center lane.
+
+Overtaking another vehicle on the right lane
+![Right overtake](./src/Images/right_overtake.gif)
+[Download video](./src/Videos/right_overtake.mp4)
+
+Overtaking another vehicle on the left lane
+![Left overtake](./src/Images/left_overtake.gif)
+[Download video](./src/Videos/left_overtake.mp4)
+
+Overtaking another vehicle on the center lane
+![Center overtake](./src/Images/center_overtake.gif)
+[Download video](./src/Videos/center_overtake.mp4)
+
+Overtaking changing two tracks at once
+![Two overtake](./src/Images/two_overtake.gif)
+[Download video](./src/Videos/two_overtake.mp4)
+
+---
+
+### Reflection
+
+Based on the provided code from classroom, the path planning algorithms start at [src/main.cpp](./src/main.cpp#L176) line 176 to the line 403. The code could be separated into different functions to show the overall process, actually, I tried to separate it into more function files, but it was showing a lot of compilation error, so I created just one more useful function file called [utility.cpp](./src/utility.cpp) where I put some auxiliary functions to perform the transformation of the coordinates. For this moment I believe that it reached the project's objective, but in the future I will be able to improve and better structure the code.
+
+The Path Planning module is typically decomposed into the following set of sub-modules:
+
+- **Prediction**: will predict the trajectories of the surrounding detected objects
+- **Behavior**: will define a set of candidate high level targets for the vehicle to follow (lane changes, slow down …)
+- **Trajectory**: for every possible high level targets, a precise path to follow will be computed. For each trajectory a cost will be derived (depending on feasibility, safety, legality, comfort and efficiency) and the trajectory with the lowest cost will be chosen.
+
+![Overview planning](./src/Images/overview_planning.png)
+
+#### Coordinate transforms
+
+Before going into the file details **main.cpp**, we discuss process models, we should mention **"Frenet Coordinates"**, which are a way of representing position on a road in a more intuitive way than traditional (x,y) Cartesian Coordinates.
+With Frenet coordinates, we use the variables **s** and **d** to describe a vehicle's position on the road. The **s** coordinate represents distance *along* the road (also known as **longitudinal displacement**) and the *d* coordinate represents side-to-side position on the road (also known as **lateral displacement**).
+
+![Frenet](./src/Images/frenet.png)
+
+In the code, the provided Eigen-3.3 library, they are represented by the functions: **getFrenet** responsável por transform from Cartesian **x**,**y** coordinates to Frenet **s**,**d** coordinates, and the function **getXY** responsible to inverter from Frenet to Cartesian, but It's not a linear transformation. That something that's calculated at the very beginning that we can just feed it. And, that's used for the map inside the function itself.
+
+```shell
+vector<double> getFrenet(double x, double y, double theta, const vector<double> &maps_x, const vector<double> &maps_y)
+```
+
+```shell
+vector<double> getXY(double s, double d, const vector<double> &maps_s, const vector<double> &maps_x, const vector<double> &maps_y)
+```
+
+#### Prediction
+
+See [line 176 to line 218](./src/main.cpp#L176). It's important that the car doesn't crash into any of the other vehicles on the road, all of which are moving at different speeds around the speed limit and can change lanes. This part of the code deal with the **telemetry** and **sensor fusion** data. Through the car's location map the sensor fusion comes into play, listing of all other cars on the same side of the road.
+
+It intends to reason about the environment. In the case, the prediction analyzes some aspects:
+
+- the position of other vehicles
+- vehicles that are in my lane
+- find car speed.
+- estimate car s position after executing previous trajectory. Vehicles in our lane, or in our left, right.
+
+These questions are answered by calculating the lane each other car is and the position it will be at the end of the last plan trajectory. A car is considered "dangerous" when its distance to our car is less than 30 meters in front or behind us.
+
+#### Behavior
+
+See [line 224 to line 255](./src/main.cpp#L224). In this implementation the behavior planner will provide a list of candidate targets rather than a single suggested maneuver. The first possible target will relate to adjusting the speed in our lane and keeping basically a rather big 30 meters distance with the vehicle in front of us, we end up driving at the same speed, 30 meters behind the vehicle in front of us.
+
+Here the limit of the maximum allowed speed and acceleration during the overtaking process will be controlled. It will check if we have a car in front of us, if we should must change lanes, if we should speed up or slow down.
+
+Based on the prediction of the situation we are in, this code increases the speed, decrease speed, or make a lane change when it is safe. Instead of increasing the speed at this part of the code, a `speed_diff` is created to be used for speed changes when generating the trajectory in the last part of the code. This approach makes the car more responsive acting faster to changing situations like a car in front of it trying to apply breaks to cause a collision.
+
+Here it is checked if there is a vehicle nearby to be able to change lanes. If there is a vehicle nearby, then it only slows down by staying in the same lane until a safe situation arises to be able to change lanes and overtake the vehicle ahead.
+![Check overtake](./src/Images/check_before_overtake.gif)
+[Download video](./src/Videos/check_before_overtake.mp4)
+
+In this other moment, the vehicle identified that it could change lanes, but when it did, another vehicle appeared in the lane that was going and then returned to the lane where it was previously.
+![Try overtake](./src/Images/try_overtake.gif)
+[Download video](./src/Videos/try_overtake.mp4)
+
+#### Trajectory
+
+See [line 263 to line 411](./src/main.cpp#L263). This code does the calculation of the trajectory based on the speed and lane output from the behavior, car coordinates and past path points.
+
+A smooth trajectory is calculated using a [spline](http://kluge.in-chemnitz.de/opensource/spline/) that contains some previous path points of vehicles and some future points from the map. The actual future path points of the vehicles are derived from the spline. This helps to avoid jerk.
+
+Here we will create a list widely spaced (x,y) waypoints, evenly spaced at 30m, and later we will interpolate these waypoints with a spline and fill it in with points that control spaced.
+
+In order to avoid abrupt changes of the velocity, we incrementally increase or decrease the distance between the points of the path.
+
+The last two points of the previous trajectory (or the car position if there are no previous trajectory, [lines 263 to 307](./src/main.cpp#L263)) are used in conjunction three points at a far distance ([lines 313 to 315](./src/main.cpp#L313)) to initialize the spline calculation ([line 340 and 343](./src/main.cpp#L340)).
+
+```shell
+ // Create the spline.
+ tk::spline s;
+// Set (x,y) points to the spline
+ s.set_points(ptsx, ptsy);
+```
+
+In Frenet add evenly 30m spaced points ahead of the starting reference. Instead of just looking at one distance increment, we looking out basically 35, 60, 90, instead of looping through and creating 50.
+
+```shell
+vector<double> next_wp0 = getXY(car_s + 30, 2 + 4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
+vector<double> next_wp1 = getXY(car_s + 60, 2 + 4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
+vector<double> next_wp2 = getXY(car_s + 90, 2 + 4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
+```
+To make the work less complicated to the spline calculation based on those points, the coordinates are transformed (shift and rotation) to local car coordinates ([lines 329 to 337](./src/main.cpp#L329)).
+
+```shell
+for ( int i = 0; i < ptsx.size(); i++ ) 
+{
+// shift car reference angle to 0 degree
+	double shift_x = ptsx[i] - ref_x;
+	double shift_y = ptsy[i] - ref_y;
+
+	ptsx[i] = shift_x * cos(0 - ref_yaw) - shift_y * sin(0 - ref_yaw);
+	ptsy[i] = shift_x * sin(0 - ref_yaw) + shift_y * cos(0 - ref_yaw);
+}
+```
+
+In order to ensure more continuity on the trajectory (in addition to adding the last two point of the pass trajectory to the spline adjustment), the pass trajectory points are copied to the new trajectory ([lines 347 to 355](./src/main.cpp#L347)). 
+```shell
+vector<double> next_x_vals;
+vector<double> next_y_vals;
+
+// Start with all of the previous path points from last time
+for ( int i = 0; i < prev_size; i++ )
+{
+	next_x_vals.push_back(previous_path_x[i]);
+	next_y_vals.push_back(previous_path_y[i]);
+}
+```
+
+The rest of the points are calculated by evaluating the spline and transforming the output coordinates to not local coordinates ([lines 359 to 403](./src/main.cpp#L359)). The speed change is decided on the behavior part of the code, but it is used in that part to increase/decrease speed on every trajectory points instead of doing it for the complete trajectory.
+
+
+Full video of the route executed in the project
+![Full route](./src/Images/full_route.png)
+[Download video](./src/Videos/full_route.mp4)
+
+<iframe width="260" height="200"src="./src/Videos/full_route.mp4" frameborder="0" allowfullscreen=""></iframe>
+
+
+
+
+
 
