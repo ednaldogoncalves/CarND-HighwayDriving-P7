@@ -173,22 +173,22 @@ The car change lanes when the there is a slow car in front of it, and it is safe
 <p align="center">
 Overtaking another vehicle on the right lane<br>
 <img src="./src/Images/right_overtake.gif"><br>
-[Download video](./src/Videos/right_overtake.mp4)
+<a href="./src/Videos/right_overtake.mp4">Download video</a>
 <p>
 <p align="center">
 Overtaking another vehicle on the left lane<br>
 <img src="./src/Images/left_overtake.gif"><br>
-[Download video](./src/Videos/left_overtake.mp4)
+<a href="./src/Videos/left_overtake.mp4">Download video</a>
 <p>
 <p align="center">
 Overtaking another vehicle on the center lane<br>
 <img src="./src/Images/center_overtake.gif"><br>
-[Download video](./src/Videos/center_overtake.mp4)
+<a href="./src/Videos/center_overtake.mp4">Download video</a>
 <p>
 <p align="center">
 Overtaking changing two tracks at once<br>
 <img src="./src/Images/two_overtake.gif"><br>
-[Download video](./src/Videos/two_overtake.mp4)
+<a href="./src/Videos/two_overtake.mp4">Download video</a>
 </p>
 
 ---
@@ -250,13 +250,13 @@ Based on the prediction of the situation we are in, this code increases the spee
 <p align="center">
 Here it is checked if there is a vehicle nearby to be able to change lanes. If there is a vehicle nearby, then it only slows down by staying in the same lane until a safe situation arises to be able to change lanes and overtake the vehicle ahead.<br>
 <img src="./src/Images/check_before_overtake.gif"><br>
-[Download video](./src/Videos/check_before_overtake.mp4)
+<a href="./src/Videos/check_before_overtake.mp4">Download video</a>
 </p>
 
 <p align="center">
 At that other time, the vehicle identified that it could return to the center lane, but when it did, another vehicle appeared in the lane that was going, then returned to the lane where it was previously.<br>
 <img src="./src/Images/try_overtake.gif"><br>
-[Download video](./src/Videos/try_overtake.mp4 "Download video")
+<a href="./src/Videos/try_overtake.mp4">Download video</a>
 </p>
 
 #### Trajectory
@@ -317,7 +317,7 @@ The rest of the points are calculated by evaluating the spline and transforming 
 <p align="center">
 Full video of the route executed in the project<br>
 <img src="./src/Images/full_route.png"><br>
-[Download video](./src/Videos/full_route.mp4)
+<a href="./src/Videos/full_route.mp4">Download video</a>
 </p>
 
 
