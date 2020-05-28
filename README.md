@@ -254,9 +254,9 @@ Here it is checked if there is a vehicle nearby to be able to change lanes. If t
 </p>
 
 <p align="center">
-In this other moment, the vehicle identified that it could change lanes, but when it did, another vehicle appeared in the lane that was going and then returned to the lane where it was previously.<br>
+At that other time, the vehicle identified that it could return to the center lane, but when it did, another vehicle appeared in the lane that was going, then returned to the lane where it was previously.<br>
 <img src="./src/Images/try_overtake.gif"><br>
-[Download video](./src/Videos/try_overtake.mp4)
+[Download video](./src/Videos/try_overtake.mp4 "Download video")
 </p>
 
 #### Trajectory
