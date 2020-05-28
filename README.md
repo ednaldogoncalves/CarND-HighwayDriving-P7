@@ -164,7 +164,7 @@ The car stays in its lane most of the time but when it changes lane because of t
 <p align="center">
 The vehicle prefers to stay in the center lane, if it is in another lane, then if possible it goes back to the center.<br>
 <img src="./src/Images/back_center.gif"><br>
-[Download video](./src/Videos/back_center.mp4)
+<a href="./src/Videos/back_center.mp4">Download video</a>
 </p>
 
 #### - The car is able to change lanes
