@@ -72,7 +72,6 @@ the path has processed since last time.
 
 A really helpful resource for doing this project and creating smooth trajectories was using http://kluge.in-chemnitz.de/opensource/spline/, the spline function is in a single hearder file is really easy to use.
 
----
 
 ## Dependencies
 
@@ -94,7 +93,6 @@ A really helpful resource for doing this project and creating smooth trajectorie
     cd uWebSockets
     git checkout e94b6e1
     ```
----
 
 ## Files
 
@@ -132,15 +130,15 @@ Now the path planner is running and listening on port 4567 for messages from the
 ## Project [Rubric](https://review.udacity.com/#!/rubrics/1971/view)
 
 ### Compilation
----
+
 
 #### - The code compiles correctly.
 
 No changes were made in the cmake configuration. A new file was added [src/spline.h](./scr/spline.h). It is the [Cubic Spline interpolation implementation](http://kluge.in-chemnitz.de/opensource/spline/): a single .h file you can use splines instead of polynomials. It was a great suggestion from the classroom QA video. It works great.
 
----
+
 ### Valid trajectories
----
+
 
 #### - The car is able to drive at least 4.32 miles without incident.
 I ran the simulator for around 5 miles without incidents:
@@ -191,7 +189,6 @@ Overtaking changing two tracks at once<br>
 <a href="./src/Videos/two_overtake.mp4">Download video</a>
 </p>
 
----
 
 ### Reflection
 
@@ -320,7 +317,6 @@ Full video of the route executed in the project<br>
 <a href="./src/Videos/full_route.mp4">Download video</a>
 </p>
 
----
 
 ## Resources for further research:
 
