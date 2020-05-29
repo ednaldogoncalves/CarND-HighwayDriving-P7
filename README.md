@@ -320,7 +320,15 @@ Full video of the route executed in the project<br>
 <a href="./src/Videos/full_route.mp4">Download video</a>
 </p>
 
+---
 
+## Resources for further research:
+
+Introduction to Robotics #4:<br>http://correll.cs.colorado.edu/?p=965<br>
+Path-Planning-The path planning problem in depth:<br> https://www.cs.cmu.edu/afs/cs/project/jair/pub/volume9/mazer98a-html/node2.html<br>
+A discussion on What is the difference between path planning and motion planning?<br>https://robotics.stackexchange.com/questions/8302/what-is-the-difference-between-path-planning-and-motion-planning<br>
+Introduction to robot motion: Robot Motion Planning:<br>http://ais.informatik.uni-freiburg.de/teaching/ss11/robotics/slides/18-robot-motion-planning.pdf<br>
+Introduction to robot motion: Path Planning and Collision Avoidance:<br> http://ais.informatik.uni-freiburg.de/teaching/ss10/robotics/slides/16-pathplanning.pdf
 
 
 
