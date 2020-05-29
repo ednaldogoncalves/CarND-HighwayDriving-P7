@@ -324,7 +324,7 @@ Full video of the route executed in the project<br>
 
 ## Resources for further research:
 
-[Introduction to Robotics #4:](http://correll.cs.colorado.edu/?p=965)<br>
+<a target="_blank" style="text-decoration: none" href="http://correll.cs.colorado.edu/?p=965">Introduction to Robotics #4:</a><br>
 [Path-Planning-The path planning problem in depth:](https://www.cs.cmu.edu/afs/cs/project/jair/pub/volume9/mazer98a-html/node2.html)<br>
 [A discussion on What is the difference between path planning and motion planning?](https://robotics.stackexchange.com/questions/8302/what-is-the-difference-between-path-planning-and-motion-planning)<br>
 [Introduction to robot motion: Robot Motion Planning:](http://ais.informatik.uni-freiburg.de/teaching/ss11/robotics/slides/18-robot-motion-planning.pdf)<br>
