@@ -9,3 +9,15 @@ src/backup/spline.h
 src/backup/utility.cpp
 src/backup/utility.h
 src/backup/planner.cpp
+src/Videos/full_route_play/full_route.html
+src/Videos/full_route_play/full_route.html
+src/Videos/full_route_play/full_route.mp4
+src/Videos/full_route_play/full_route.png
+src/Videos/full_route_play/full_route_config.xml
+src/Videos/full_route_play/full_route_embed.css
+src/Videos/full_route_play/full_route_First_Frame.png
+src/Videos/full_route_play/full_route_optimized.mp4
+src/Videos/full_route_play/full_route_player.html
+src/Videos/full_route_play/scripts/config_xml.js
+src/Videos/full_route_play/scripts/techsmith-smart-player.min.js
+src/Videos/full_route_play/skins/remix/techsmith-smart-player.min.css
