@@ -313,7 +313,7 @@ The rest of the points are calculated by evaluating the spline and transforming 
 
 <p align="center">
 Full video of the route executed in the project<br>
-<a target="_blank" style="text-decoration: none" href="https://www.lgontelecom.com.br/udacity/project7/full_route.html"><img src="./src/Images/full_route.png"></a><br>
+<a target="_blank" style="text-decoration: none" href="https://drive.google.com/file/d/1rLukyQxpqBKoHPMv21GoS6ydyFh2eeTi/view?usp=sharing"><img src="./src/Images/full_route.png"></a><br>
 <a href="./src/Videos/full_route.mp4">Download video</a>
 </p>
 
